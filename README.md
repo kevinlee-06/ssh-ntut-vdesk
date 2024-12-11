@@ -48,3 +48,43 @@ To start the SSH service, run the following command in the root shell:
 systemctl start ssh
 ```
 
+### Creating a User
+
+To create a new user and grant them sudo privileges, run the following commands in the terminal with root access:
+```bash
+useradd admin
+usermod -aG sudo admin
+passwd user
+```
+- The first command creates a new user named admin.
+- The second command adds the admin user to the sudo group, granting them administrative privileges.
+- The third command sets a password for the admin user.
+
+## Second Part - Connecting to VDesk on Your Machine
+
+All steps in this part should be run on your computer.
+
+### Installing ZeroTier
+
+To install ZeroTier on your local machine, follow the instructions for your operating system:
+
+- **Windows**: Download the installer from [ZeroTier Downloads](https://www.zerotier.com/download/) and run it.
+- **macOS**: Download the installer from [ZeroTier Downloads](https://www.zerotier.com/download/) and run it.
+- **Linux**: Use the following command to install ZeroTier:
+
+```bash
+curl -s https://install.zerotier.com | sudo bash
+```
+
+### Joining the Network
+After installing ZeroTier, you need to join the same network you created earlier. Use the following command in your terminal or PowerShell with admin or root access:
+```bash
+zerotier-cli join <network_id>
+```
+
+### Using PowerShell or Terminal to Connect
+
+Once you have joined the ZeroTier network, you can connect to the VDesk using SSH. Open your terminal (or PowerShell on Windows) and run the following command:
+```bash
+ssh admin@<zerotier_ip>
+```
