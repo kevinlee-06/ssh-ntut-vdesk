@@ -9,7 +9,7 @@ All steps in this part should be run in the Ubuntu VDesk's terminal and with roo
 ### Access root shell
 Run the following command to get root access, you will not be asked for password.
 ```bash
-sudo sh -c
+sudo sh -c bash
 ```
 Once you have root access, proceed to the next step.
 
